@@ -11,7 +11,7 @@ const registerUser = async (req, res) => {
     const { name, role, username, password } = req.body;
     try {
         const userExists = await User.findOne({ username });
-        if (userExists) return res.status(400).json({ message: 'User already exists' });
+        if (userExists) return res.status(400).json({ message: 'Error: This user already exists.' });
 
         const user = await User.create({ name, role, username, password });
         res.status(201).json({ id: user.id, name: user.name, role: user.role, username: user.username, token: generateToken(user.id) });
