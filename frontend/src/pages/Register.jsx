@@ -20,7 +20,7 @@ const Register = () => {
   return (
     <div className="max-w-md mx-auto mt-20">
       <form onSubmit={handleSubmit} className="bg-white p-6 shadow-md rounded">
-        <h1 className="text-2xl font-bold mb-4 text-center">Register</h1>
+        <h1 className="text-2xl font-bold mb-4 text-center">Create User Account</h1>
 
         <label for="name">Name:</label>
         <input
@@ -69,7 +69,7 @@ const Register = () => {
         />
 
         <button type="submit" className="w-full bg-green-600 text-white p-2 rounded">
-          Register
+          Confirm
         </button>
       </form>
     </div>
