@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axiosInstance from '../axiosConfig';
 
 const Register = () => {
-  const [formData, setFormData] = useState({ name: '', email: '', password: '' });
+  const [formData, setFormData] = useState({ name: '', role: '', username: '', password: '' });
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -20,30 +20,56 @@ const Register = () => {
   return (
     <div className="max-w-md mx-auto mt-20">
       <form onSubmit={handleSubmit} className="bg-white p-6 shadow-md rounded">
-        <h1 className="text-2xl font-bold mb-4 text-center">Register</h1>
+        <h1 className="text-2xl font-bold mb-4 text-center">Create User Account</h1>
+
+        <label for="name">Name:</label>
         <input
+          id="name"
+          name="name"
           type="text"
-          placeholder="Name"
+          placeholder="Enter your full name."
           value={formData.name}
           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
           className="w-full mb-4 p-2 border rounded"
         />
+
+        <label for="role">Role:</label>
+        <select
+          id="role"
+          name="role"
+          onChange={(e) => setFormData({ ...formData, role: e.target.value })}
+          className="w-full mb-4 p-2 border rounded">
+          <option value="" disabled="true" selected="true">-- Please select your role. --</option>
+          <option value="doctor">Doctor</option>
+          <option value="nurse">Nurse</option>
+          <option value="practice manager">Practice Manager</option>
+          <option value="reception">Reception</option>
+        </select>
+
+        <label for="username">Username:</label>
         <input
-          type="email"
-          placeholder="Email"
-          value={formData.email}
-          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+          id="username"
+          name="username"
+          type="text"
+          placeholder="Enter your username."
+          value={formData.username}
+          onChange={(e) => setFormData({ ...formData, username: e.target.value })}
           className="w-full mb-4 p-2 border rounded"
         />
+
+        <label for="password">Password:</label>
         <input
+          id="password"
+          name="password"
           type="password"
-          placeholder="Password"
+          placeholder="Enter your password."
           value={formData.password}
           onChange={(e) => setFormData({ ...formData, password: e.target.value })}
           className="w-full mb-4 p-2 border rounded"
         />
+
         <button type="submit" className="w-full bg-green-600 text-white p-2 rounded">
-          Register
+          Confirm
         </button>
       </form>
     </div>
