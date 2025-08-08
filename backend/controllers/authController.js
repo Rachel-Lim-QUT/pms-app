@@ -38,9 +38,8 @@ const getProfile = async (req, res) => {
     try {
       const user = await User.findById(req.user.id);
       if (!user) {
-        return res.status(404).json({ message: 'User not found' });
+        return res.status(404).json({ message: 'Error 404: User not found.' });
       }
-  
       res.status(200).json({
         name: user.name,
         role: user.role,
@@ -48,7 +47,7 @@ const getProfile = async (req, res) => {
         password: user.password,
       });
     } catch (error) {
-      res.status(500).json({ message: 'Server error', error: error.message });
+      res.status(500).json({ message: 'Error 500: Server error.', error: error.message });
     }
   };
 
