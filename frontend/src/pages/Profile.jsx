@@ -65,7 +65,7 @@ const Profile = () => {
           id="name"
           name="name"
           type="text"
-          placeholder="Name"
+          placeholder="Enter your full name."
           value={formData.name}
           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
           className="w-full mb-4 p-2 border rounded"
@@ -76,7 +76,7 @@ const Profile = () => {
           id="role"
           name="role"
           type="text"
-          placeholder="Role"
+          placeholder=""
           value={formData.role}
           className="w-full mb-4 p-2 border rounded"
         />
@@ -86,7 +86,7 @@ const Profile = () => {
           id="username"
           name="username"
           type="text"
-          placeholder="Username"
+          placeholder="Enter your new username."
           value={formData.username}
           onChange={(e) => setFormData({ ...formData, username: e.target.value })}
           className="w-full mb-4 p-2 border rounded"
@@ -97,11 +97,11 @@ const Profile = () => {
           id="password"
           name="password"
           type="password"
-          placeholder="Password"
+          placeholder="Enter your new password."
           onChange={(e) => setFormData({ ...formData, password: e.target.value })}
           className="w-full mb-4 p-2 border rounded"
         />
-        
+
         <button type="submit" className="w-full bg-blue-600 text-white p-2 rounded">
           {loading ? 'Updating...' : 'Update'}
         </button>
