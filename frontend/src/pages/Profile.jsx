@@ -76,8 +76,8 @@ const Profile = () => {
           id="role"
           name="role"
           type="text"
-          placeholder=""
           value={formData.role}
+          readOnly
           className="w-full mb-4 p-2 border rounded"
         />
 
