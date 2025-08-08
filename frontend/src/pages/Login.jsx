@@ -24,7 +24,10 @@ const Login = () => {
       <form onSubmit={handleSubmit} className="bg-white p-6 shadow-md rounded">
         <h1 className="text-2xl font-bold mb-4 text-center">Login</h1>
 
+        <label for="username">Username:</label>
         <input
+          id="username"
+          name="username"
           type="text"
           placeholder="Username"
           value={formData.username}
@@ -32,14 +35,17 @@ const Login = () => {
           className="w-full mb-4 p-2 border rounded"
         />
 
+        <label for="password">Password:</label>
         <input
+          id="password"
+          name="password"
           type="password"
           placeholder="Password"
           value={formData.password}
           onChange={(e) => setFormData({ ...formData, password: e.target.value })}
           className="w-full mb-4 p-2 border rounded"
         />
-        
+
         <button type="submit" className="w-full bg-blue-600 text-white p-2 rounded">
           Login
         </button>
